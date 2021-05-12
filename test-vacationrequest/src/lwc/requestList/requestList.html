@@ -1,0 +1,36 @@
+<template>
+    <lightning-card>
+        <div class="slds-text-align--center slds-text-heading_large">Vacation Requests</div>
+
+        <div label="show only my checkbox" class="slds-grid slds-p-around_small">
+            <!-- Show Only Mycheckbox -->
+            <div class="slds-col">
+                <c-show-only-my onselected={handleChange}></c-show-only-my>
+            </div>
+            <!-- New Request button -->
+            <div label="new request" class="slds-col">
+                <c-new-request></c-new-request>
+            </div>
+        </div>
+
+        <!-- Request List header -->
+        <div class="slds-box--border slds-theme_shade">
+            <ul class="slds-grid slds-p-around_small">
+                <li class="slds-col slds-size--2-of-12">Name</li>
+                <li class="slds-col slds-size--1-of-12">Request Type</li>
+                <li class="slds-col slds-size--3-of-12">StartDate - EndDate (WorkingDays days)</li>
+                <li class="slds-col slds-size--2-of-12">Status</li>
+                <li class="slds-col slds-size--2-of-12">Manager</li>
+                <li class="slds-col slds-size--2-of-12">Remove / Submit / Approve</li>
+            </ul>
+        </div>
+        <!-- Request List item -->
+        <div>
+            <template if:true={requests.data}>
+                <template for:each={requests.data} for:item="it">
+                    <c-request-list-item key={it.Id} it={it}></c-request-list-item>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

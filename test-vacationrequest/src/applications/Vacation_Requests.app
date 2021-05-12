@@ -11,7 +11,6 @@
     <label>Vacation Requests</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
-    <tabs>VacationRequest__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Vacation_Requests_UtilityBar</utilityBar>
 </CustomApplication>

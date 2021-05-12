@@ -1,0 +1,37 @@
+<template>
+    <div class={divColor.data}>
+        <ul class="slds-grid slds-border--bottom slds-p-around_small">
+            <li class="slds-col slds-size--2-of-12">{it.CreatedBy.Name}</li>
+            <li class="slds-col slds-size--1-of-12">{it.RequestType__c}</li>
+            <li class="slds-col slds-size--3-of-12">{it.StartDate__c} - {it.EndDate__c} ({it.WorkingDays__c} days)</li>
+            <li class="slds-col slds-size--2-of-12">{it.Status__c}</li>
+            <li class="slds-col slds-size--2-of-12">{it.Manager__r.Name}</li>
+            <li class="slds-col slds-size--2-of-12">
+                <ul class="slds-button-group-row slds-float_right">
+                    <li class="slds-button-group-item">
+                        <button if:true={showRemoveSubmit.data}
+                                class="slds-button slds-button_neutral"
+                                onclick={buttonRemove}
+                        >Remove
+                        </button>
+                    </li>
+                    <li class="slds-button-group-item">
+                        <button if:true={showRemoveSubmit.data}
+                                class="slds-button slds-button_neutral"
+                                onclick={buttonSubmit}
+                        >Submit
+                        </button>
+                    </li>
+                    <li class="slds-button-group-item">
+                        <button
+                                if:true={showApprove.data}
+                                class="slds-button slds-button_neutral"
+                                onclick={buttonApprove}
+                        >Approve
+                        </button>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</template>

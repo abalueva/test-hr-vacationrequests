@@ -1,34 +1,10 @@
 <template>
-    <lightning-card title="Vacation Requests">
-        <div class="slds-grid slds-p-around_small">
-            <div class="slds-col">
-                <lightning-input type="checkbox"
-                                 label="Show only my"
-                                 onchange={handleChange}
-                                 class="slds-float_left">
-                </lightning-input>
-            </div>
-            <div class="slds-col">
-                <lightning-button variant="brand"
-                                  label="New Request"
-                                  title="New Request"
-                                  onclick={openModal}
-                                  class="slds-float_right">
-                </lightning-button>
-            </div>
-        </div>
-
-        <ul class="slds-has-dividers_around-space">
-            <template if:true={requests.data}>
-                <template for:each={requests.data} for:item="it">
-                    <li key={it.Id} class="slds-item">
-                    <c-request-list-item key={it.Id} it={it}></c-request-list-item>
-                    </li>
-                </template>
-            </template>
-        </ul>
-    </lightning-card>
-
+    <lightning-button variant="brand"
+                      label="New Request"
+                      title="New Request"
+                      onclick={openModal}
+                      class="slds-float_right">
+    </lightning-button>
     <template if:true={isModalOpen}>
         <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
             <lightning-record-edit-form object-api-name="VacationRequest__c">
@@ -46,31 +22,33 @@
                     </header>
                     <!-- Modal/Popup Box LWC body starts here -->
                     <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-                        <lightning-messages>
-                        </lightning-messages>
-                        <lightning-input-field field-name="RequestType__c">
+                        <lightning-messages></lightning-messages>
+                        <lightning-input-field
+                                onchange={checkRequestType}
+                                field-name="RequestType__c"
+                                label="Request Type">
                         </lightning-input-field>
                         <lightning-input-field
+                                onchange={checkStartDate}
                                 field-name="StartDate__c"
-                                label="Start Date"
-                                min={startDate}>
+                                label="Start Date">
                         </lightning-input-field>
                         <lightning-input-field
+                                onchange={checkEndDate}
                                 field-name="EndDate__c"
-                                label="End Date"
-                                min={startDate}>
+                                label="End Date">
                         </lightning-input-field>
                     </div>
                     <!-- Modal/Popup Box LWC footer starts here -->
                     <footer class="slds-modal__footer">
                         <lightning-button
-                                class="slds-m-top_small"
+                                class="slds-m-top_small slds-align-content-center"
                                 type="submit"
                                 label="Submit"
                                 onclick={submitDetails}
+                                disabled={check}
                         >
                         </lightning-button>
-                        <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
                     </footer>
                 </div>
             </lightning-record-edit-form>

@@ -1,0 +1,27 @@
+import { LightningElement, api, wire } from 'lwc';
+import showRemoveSubmit from '@salesforce/apex/requestListItemController.showRemoveSubmit';
+import showApprove from '@salesforce/apex/requestListItemController.showApprove';
+import vrRemove from '@salesforce/apex/requestListItemController.vrRemove';
+import vrSubmit from '@salesforce/apex/requestListItemController.vrSubmit';
+import vrApprove from '@salesforce/apex/requestListItemController.vrApprove';
+import getColor from '@salesforce/apex/requestListItemController.getColor';
+
+export default class RequestListItem extends LightningElement {
+    @api it;
+    @wire (getColor, {Status: '$it.Status__c'}) divColor;
+    @wire (showRemoveSubmit, {vr: '$it'}) showRemoveSubmit;
+    @wire (showApprove, {vr: '$it'}) showApprove;
+
+    buttonRemove() {
+        vrRemove({vrName : this.it.Name});
+        window.location.reload();
+    }
+    buttonSubmit() {
+        vrSubmit({vrName : this.it.Name});
+        window.location.reload();
+    }
+    buttonApprove() {
+        vrApprove({vrName : this.it.Name});
+        window.location.reload();
+    }
+}

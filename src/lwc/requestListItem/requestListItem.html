@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-clearfix">
+        <div class="slds-float_left slds-p-around_small">
+            {it.CreatedBy.Name} {it.RequestsType__c} {it.StartDate__c} - {it.EndDate__c} ({it.WorkingDays__c} days) - {it.Status__c} - {it.Manager__r.Name}
+        </div>
+        <div class="slds-float_right">
+            <ul class="slds-button-group-row">
+                <li class="slds-button-group-item">
+                    <button if:true={showRemove}
+                            class="slds-button slds-button_neutral"
+                            onclick={buttonRemove}
+                    >Remove
+                    </button>
+                </li>
+                <li class="slds-button-group-item">
+                    <button if:true={showSubmit}
+                            class="slds-button slds-button_neutral"
+                            onclick={buttonSubmit}
+                    >Submit
+                    </button>
+                </li>
+                <li class="slds-button-group-item">
+                    <button
+                            if:true={showApprove}
+                            class="slds-button slds-button_neutral"
+                            onclick={buttonApprove}
+                    >Approve
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</template>

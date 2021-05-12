@@ -11,5 +11,4 @@
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
-    <tabs>Vacation_Request__c</tabs>
 </CustomApplication>

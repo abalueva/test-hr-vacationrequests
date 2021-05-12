@@ -179,11 +179,7 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
-    <tabs>Vacation_Request__c</tabs>
     <workspaceConfig>
-        <mappings>
-            <tab>Vacation_Request__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

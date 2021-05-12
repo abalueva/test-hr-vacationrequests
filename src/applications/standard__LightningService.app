@@ -13,13 +13,9 @@
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>standard-home</tabs>
-    <tabs>Vacation_Request__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
     <workspaceConfig>
-        <mappings>
-            <tab>Vacation_Request__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

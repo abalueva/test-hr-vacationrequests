@@ -9,5 +9,4 @@
     <tabs>standard-OtherUserProfile</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
-    <tabs>Vacation_Request__c</tabs>
 </CustomApplication>

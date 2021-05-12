@@ -9,12 +9,8 @@
     <tabs>standard-CmsChannel</tabs>
     <tabs>standard-CmsWorkspaces</tabs>
     <tabs>standard-CmsExperiences</tabs>
-    <tabs>Vacation_Request__c</tabs>
     <uiType>Lightning</uiType>
     <workspaceConfig>
-        <mappings>
-            <tab>Vacation_Request__c</tab>
-        </mappings>
         <mappings>
             <tab>standard-CmsAuthorHome</tab>
         </mappings>

@@ -6,6 +6,5 @@
     <label>LightningBolt</label>
     <navType>Standard</navType>
     <tabs>standard-LightningBoltHome</tabs>
-    <tabs>Vacation_Request__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

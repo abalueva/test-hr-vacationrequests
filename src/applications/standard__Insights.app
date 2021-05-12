@@ -4,5 +4,4 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
-    <tabs>Vacation_Request__c</tabs>
 </CustomApplication>

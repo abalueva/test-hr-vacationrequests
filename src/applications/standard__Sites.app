@@ -4,5 +4,4 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <tabs>standard-Chatter</tabs>
-    <tabs>Vacation_Request__c</tabs>
 </CustomApplication>

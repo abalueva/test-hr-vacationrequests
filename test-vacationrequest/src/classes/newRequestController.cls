@@ -1,17 +1,19 @@
 public class newRequestController {
+	// get Manager Id to open New Request Form
 	@AuraEnabled(cacheable=true)
-	public static String NoManager() {
+	public static Boolean NoManager() {
 		User managerId = [
 				SELECT Id, ManagerId
 				FROM User
 				WHERE Id=:UserInfo.getUserId()
 		];
 		if (managerId.ManagerId == null) {
-			return null;
+			return true;
 		}
-		return managerId.ManagerId;
+		return false;
 	}
 
+	// calculate Working Days
 	@AuraEnabled(cacheable=true)
 	public static Integer CalculateWorkingDays (Date StartDate, Date EndDate) {
 		Integer workingDays = 0;

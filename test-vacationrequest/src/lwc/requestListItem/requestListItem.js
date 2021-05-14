@@ -13,15 +13,15 @@ export default class RequestListItem extends LightningElement {
     @wire (showApprove, {vr: '$it'}) showApprove;
 
     buttonRemove() {
-        vrRemove({vrName : this.it.Name});
+        vrRemove({vrToRemove : this.it});
         window.location.reload();
     }
     buttonSubmit() {
-        vrSubmit({vrName : this.it.Name});
+        vrSubmit({vrToSubmit : this.it});
         window.location.reload();
     }
     buttonApprove() {
-        vrApprove({vrName : this.it.Name});
+        vrApprove({vrToApprove : this.it});
         window.location.reload();
     }
 }

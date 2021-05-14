@@ -11,7 +11,7 @@ export default class NewRequest extends LightningElement {
     @wire(NoManager) manager;
 
     openModal() {
-        if (this.manager.data == null) {
+        if (this.manager.data == true) {
             this.showNoManagerNotification();
         } else {
             this.isModalOpen = true;
